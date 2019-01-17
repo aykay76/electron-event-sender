@@ -1,0 +1,57 @@
+{
+  "name": "electron-event-sender",
+  "version": "1.0.0",
+  "description": "An Electron based event sending program (for Azure Event Hubs)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "build"
+  },
+  "repository": "https://github.com/electron/electron-event-sender",
+  "keywords": [
+    "Electron",
+    "azure",
+    "event hub",
+    "demo"
+  ],
+  "author": "Alan Kelly <alan.kelly.london@gmail.com>",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^3.0.7",
+    "electron-builder": "^20.38.3"
+  },
+  "build": {
+    "appId": "yourappid",
+    "compression": "maximum",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "category": "Development",
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
+  },
+  "dependencies": {
+    "@azure/event-hubs": "^1.0.8",
+    "ajv": "^6.6.1",
+    "dist": "^0.1.2"
+  }
+}
